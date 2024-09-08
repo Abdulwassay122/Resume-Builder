@@ -16,17 +16,31 @@ document.getElementById('Btn')?.addEventListener('click', () => {
 
 
 // Cerate resume button 
-// let createResumeBtn = document.getElementById('createResumeBtn')
-// let exampleResume = document.getElementById("main-container")
 
 let element1: any   = document.getElementById('main-container')
 let element2: any   = document.getElementById('form-container')
 function toggleForm(){
-    console.log("1222")
+  
     element1.style.display ='none'
     element2.style.display ='block'
 }
 document.getElementById('createResumeBtn')?.addEventListener('click', () => {
     toggleForm();
-    console.log("object")
+  
+});
+
+
+// creation of resume
+let fullname:any = document.getElementById('fullname')
+console.log(fullname.value)
+
+function createResume(){
+    
+      
+      
+    // element1.style.display ='none'
+    // element2.style.display ='block'
+}
+document.getElementById('create')?.addEventListener('click', () => {
+    createResume();
 });
