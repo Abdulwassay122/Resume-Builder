@@ -355,7 +355,7 @@ let phoneNo:any = document.getElementById('phoneNo')
 let adress:any = document.getElementById('adress')
 
 function createResume(){
-    let cvfullname:any = document.getElementById('cvfullname')
+    let cvfullname: any = document.getElementById('cvfullname')
     cvfullname.innerHTML =`${fullname.value}`
     let cvjobDescription:any = document.getElementById('cvjobDescription')
     cvjobDescription.innerHTML =`${joibDescription.value}`
@@ -368,11 +368,57 @@ function createResume(){
     let cvadress:any = document.getElementById('cvadress')
     cvadress.innerHTML =`${adress.value}`
     
-    profilepic.src = URL.createObjectURL(pictureInput.files[0])
+   // profile pic
+    if (pictureInput === undefined || pictureInput.files.length === 0) {
+        profilepic.src = "icons/Guest-user.png";
+    } else {
+        profilepic.src = URL.createObjectURL(pictureInput.files[0]);
+    }
+
+    //editable text
+    if (cvfullname) {
+        cvfullname.addEventListener('dblclick', () => {
+            cvfullname.setAttribute('contenteditable', 'true');
+            cvfullname.focus();
+        });
+    }
+    if (cvjobDescription) {
+        cvjobDescription.addEventListener('dblclick', () => {
+            cvjobDescription.setAttribute('contenteditable', 'true');
+            cvjobDescription.focus();
+        });
+    }
+    if (cvjobTitle) {
+        cvjobTitle.addEventListener('dblclick', () => {
+            cvjobTitle.setAttribute('contenteditable', 'true');
+            cvjobTitle.focus();
+        });
+    }
+    if (cvemailAdress) {
+        cvemailAdress.addEventListener('dblclick', () => {
+            cvemailAdress.setAttribute('contenteditable', 'true');
+            cvemailAdress.focus();
+        });
+    }
+    if (cvphoneNo) {
+        cvphoneNo.addEventListener('dblclick', () => {
+            cvphoneNo.setAttribute('contenteditable', 'true');
+            cvphoneNo.focus();
+        });
+    }
+    if (cvadress) {
+        cvadress.addEventListener('dblclick', () => {
+            cvadress.setAttribute('contenteditable', 'true');
+            cvadress.focus();
+        });
+    }
     
       
-      
-    element1.style.display ='block'
+      let togglecreateresume:any =document.getElementById('createResumeBtn')
+      togglecreateresume.innerHTML = 'Edit Your Resume'
+      element1.style.display ='block'
+      let note:any =document.getElementById('note')
+      note.innerHTML = 'You can edit name, title, descrption and contact info by double clicking on it.'
     element2.style.display ='none'
 }
 document.getElementById('create')?.addEventListener('click', () => {
