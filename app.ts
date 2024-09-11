@@ -353,6 +353,7 @@ let joibDescription:any = document.getElementById('jobDescription')
 let emailAdress:any = document.getElementById('emailAdress')
 let phoneNo:any = document.getElementById('phoneNo')
 let adress:any = document.getElementById('adress')
+let download:any = document.getElementById('downloadbtn')
 
 function createResume(){
     let cvfullname: any = document.getElementById('cvfullname')
@@ -420,8 +421,29 @@ function createResume(){
       let note:any =document.getElementById('note')
       note.innerHTML = 'You can edit name, title, descrption and contact info by double clicking on it.'
     element2.style.display ='none'
+    download.style.display = 'block'
+
 }
 document.getElementById('create')?.addEventListener('click', () => {
     createResume();
     submitAllForms()
 });
+
+// let download :any = document.getElementById('downloadbtn')
+document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>');
+
+download.addEventListener('click', ()=>{
+    let Resume = document.getElementById('grid-container')
+    let opt = {
+        margin:       1,
+        filename:     `${fullname.value} Resume.pdf`,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'px', format: 'letter', orientation: 'portrait' }
+      };
+        html2pdf().set(opt).from(Resume).save()
+        console.log('object')
+      })
+
+
+
