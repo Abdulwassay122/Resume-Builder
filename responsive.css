@@ -247,6 +247,7 @@
         /* margin-right: 100px; */
         flex-direction: column;
         margin: 20px;
+        
     }
     #component-1{
         grid-area: c1;
@@ -302,7 +303,6 @@
         justify-content: left;
         margin: 20px;
         padding-bottom: 30px;
-        display: none;
     }
     #contact-info > div >img{
         height: 20px;
