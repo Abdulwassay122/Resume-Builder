@@ -435,15 +435,14 @@ document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/
 download.addEventListener('click', ()=>{
     let Resume = document.getElementById('grid-container')
     let opt = {
-        margin:       1,
+        margin:       0,
         filename:     `${fullname.value} Resume.pdf`,
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 0 },
-        jsPDF:        { unit: 'px', format: 'letter', orientation: 'portrait' }
+        image:        { type: 'jpeg', quality: 3 },
+        html2canvas:  { scale: 1 },
+        jsPDF:        { unit: 'in', format: 'a3', orientation: 'portrait' }
       };
-        html2pdf().set(opt).from(Resume).save()
+        html2pdf().set(opt).from(Resume).save()     
         console.log('object')
       })
-
 
 
