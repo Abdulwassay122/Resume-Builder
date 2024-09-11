@@ -438,7 +438,7 @@ download.addEventListener('click', ()=>{
         margin:       1,
         filename:     `${fullname.value} Resume.pdf`,
         image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
+        html2canvas:  { scale: 0 },
         jsPDF:        { unit: 'px', format: 'letter', orientation: 'portrait' }
       };
         html2pdf().set(opt).from(Resume).save()

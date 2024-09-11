@@ -30,8 +30,8 @@
     #main-container{
         width: 800px;
         display: flex;
-        /* justify-content: center;
-        align-items: center; */
+        justify-content: center;
+        align-items: center;
         /* margin-right: 100px; */
         flex-direction: column;
         margin: 20px;
@@ -242,8 +242,8 @@
     #main-container{
         width: 400px;
         display: flex;
-        /* justify-content: center;
-        align-items: center; */
+        justify-content: center;
+        align-items: center;
         /* margin-right: 100px; */
         flex-direction: column;
         margin: 20px;
